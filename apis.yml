@@ -13,15 +13,15 @@ created: '2024-12-03'
 modified: '2026-03-16'
 specificationVersion: '0.19'
 tags:
+  - Emergency Management
   - Federal Government
   - Wildfire
-  - Emergency Management
 apis:
   - aid: national-interagency-fire-center:national-interagency-fire-center
     name: National Interagency Fire Center
     tags:
-      - Wildfire
       - Data
+      - Wildfire
     humanURL: https://data-nifc.opendata.arcgis.com
     properties:
       - url: https://data-nifc.opendata.arcgis.com
