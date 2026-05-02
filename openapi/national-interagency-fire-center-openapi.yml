@@ -1,0 +1,163 @@
+openapi: 3.0.3
+info:
+  title: NIFC ArcGIS REST Services API
+  description: >-
+    The National Interagency Fire Center hosts an ArcGIS REST Services
+    Directory exposing FeatureServer services that provide authoritative
+    geospatial data on wildfire incidents, fire perimeters, dispatch
+    boundaries, fuel treatments, weather stations, and related fire
+    management resources. This specification documents the common
+    ArcGIS REST conventions used by NIFC's hosted services.
+  version: "1.0.0"
+  contact:
+    name: National Interagency Fire Center
+    url: https://data-nifc.opendata.arcgis.com
+servers:
+  - url: https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services
+    description: NIFC ArcGIS REST services
+tags:
+  - name: Services
+  - name: FeatureServer
+  - name: Layer
+paths:
+  /:
+    get:
+      tags: [Services]
+      summary: List ArcGIS services
+      description: List all FeatureServer services hosted in the NIFC services directory.
+      operationId: listServices
+      parameters:
+        - name: f
+          in: query
+          description: Response format.
+          schema: { type: string, enum: [html, json, pjson], default: json }
+      responses:
+        '200':
+          description: Directory listing of services.
+  /{service}/FeatureServer:
+    get:
+      tags: [FeatureServer]
+      summary: Get FeatureServer metadata
+      description: Retrieve metadata for a NIFC FeatureServer service.
+      operationId: getFeatureServer
+      parameters:
+        - name: service
+          in: path
+          required: true
+          schema: { type: string }
+        - name: f
+          in: query
+          schema: { type: string, enum: [html, json, pjson], default: json }
+      responses:
+        '200':
+          description: FeatureServer metadata describing layers and capabilities.
+  /{service}/FeatureServer/{layerId}:
+    get:
+      tags: [Layer]
+      summary: Get layer metadata
+      description: Retrieve metadata for a specific layer in a FeatureServer.
+      operationId: getLayer
+      parameters:
+        - name: service
+          in: path
+          required: true
+          schema: { type: string }
+        - name: layerId
+          in: path
+          required: true
+          schema: { type: integer }
+        - name: f
+          in: query
+          schema: { type: string, enum: [html, json, pjson], default: json }
+      responses:
+        '200':
+          description: Layer metadata including fields, geometry type, and extent.
+  /{service}/FeatureServer/{layerId}/query:
+    get:
+      tags: [Layer]
+      summary: Query a layer
+      description: >-
+        Query features from a NIFC FeatureServer layer using attribute and
+        spatial filters. Supports paging, geometry filtering, output spatial
+        reference, and return options.
+      operationId: queryLayer
+      parameters:
+        - name: service
+          in: path
+          required: true
+          schema: { type: string }
+        - name: layerId
+          in: path
+          required: true
+          schema: { type: integer }
+        - name: where
+          in: query
+          description: SQL-like attribute filter.
+          schema: { type: string }
+        - name: objectIds
+          in: query
+          description: Comma-separated ObjectIDs to retrieve.
+          schema: { type: string }
+        - name: geometry
+          in: query
+          description: Geometry filter (point, envelope, polyline, polygon).
+          schema: { type: string }
+        - name: geometryType
+          in: query
+          schema:
+            type: string
+            enum: [esriGeometryPoint, esriGeometryMultipoint, esriGeometryPolyline, esriGeometryPolygon, esriGeometryEnvelope]
+        - name: inSR
+          in: query
+          description: Spatial reference of the input geometry.
+          schema: { type: string }
+        - name: spatialRel
+          in: query
+          schema:
+            type: string
+            enum:
+              - esriSpatialRelIntersects
+              - esriSpatialRelContains
+              - esriSpatialRelCrosses
+              - esriSpatialRelEnvelopeIntersects
+              - esriSpatialRelIndexIntersects
+              - esriSpatialRelOverlaps
+              - esriSpatialRelTouches
+              - esriSpatialRelWithin
+        - name: outFields
+          in: query
+          description: Comma-separated list of fields to return, or '*' for all.
+          schema: { type: string }
+        - name: outSR
+          in: query
+          schema: { type: string }
+        - name: returnGeometry
+          in: query
+          schema: { type: boolean, default: true }
+        - name: returnIdsOnly
+          in: query
+          schema: { type: boolean, default: false }
+        - name: returnCountOnly
+          in: query
+          schema: { type: boolean, default: false }
+        - name: orderByFields
+          in: query
+          schema: { type: string }
+        - name: groupByFieldsForStatistics
+          in: query
+          schema: { type: string }
+        - name: outStatistics
+          in: query
+          schema: { type: string }
+        - name: resultOffset
+          in: query
+          schema: { type: integer }
+        - name: resultRecordCount
+          in: query
+          schema: { type: integer }
+        - name: f
+          in: query
+          schema: { type: string, enum: [html, json, pjson, geojson], default: json }
+      responses:
+        '200':
+          description: Query result with features and geometry payload.
