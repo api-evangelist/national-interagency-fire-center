@@ -1,0 +1,224 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: NIFC ArcGIS REST Services API — Layer
+  description: 'NIFC ArcGIS REST Services API — Layer. 2 operations. Lead operation: Get layer metadata. Self-contained Naftiko
+    capability covering one National Interagency Fire Center business surface.'
+  tags:
+  - National Interagency Fire Center
+  - Layer
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    NATIONAL_INTERAGENCY_FIRE_CENTER_API_KEY: NATIONAL_INTERAGENCY_FIRE_CENTER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: national-interagency-fire-center-layer
+    baseUri: https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services
+    description: NIFC ArcGIS REST Services API — Layer business capability. Self-contained, no shared references.
+    resources:
+    - name: service-FeatureServer-layerId
+      path: /{service}/FeatureServer/{layerId}
+      operations:
+      - name: getlayer
+        method: GET
+        description: Get layer metadata
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: service
+          in: path
+          type: string
+          required: true
+        - name: layerId
+          in: path
+          type: integer
+          required: true
+        - name: f
+          in: query
+          type: string
+    - name: service-FeatureServer-layerId-query
+      path: /{service}/FeatureServer/{layerId}/query
+      operations:
+      - name: querylayer
+        method: GET
+        description: Query a layer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: service
+          in: path
+          type: string
+          required: true
+        - name: layerId
+          in: path
+          type: integer
+          required: true
+        - name: where
+          in: query
+          type: string
+          description: SQL-like attribute filter.
+        - name: objectIds
+          in: query
+          type: string
+          description: Comma-separated ObjectIDs to retrieve.
+        - name: geometry
+          in: query
+          type: string
+          description: Geometry filter (point, envelope, polyline, polygon).
+        - name: geometryType
+          in: query
+          type: string
+        - name: inSR
+          in: query
+          type: string
+          description: Spatial reference of the input geometry.
+        - name: spatialRel
+          in: query
+          type: string
+        - name: outFields
+          in: query
+          type: string
+          description: Comma-separated list of fields to return, or '*' for all.
+        - name: outSR
+          in: query
+          type: string
+        - name: returnGeometry
+          in: query
+          type: boolean
+        - name: returnIdsOnly
+          in: query
+          type: boolean
+        - name: returnCountOnly
+          in: query
+          type: boolean
+        - name: orderByFields
+          in: query
+          type: string
+        - name: groupByFieldsForStatistics
+          in: query
+          type: string
+        - name: outStatistics
+          in: query
+          type: string
+        - name: resultOffset
+          in: query
+          type: integer
+        - name: resultRecordCount
+          in: query
+          type: integer
+        - name: f
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: national-interagency-fire-center-layer-rest
+    port: 8080
+    description: REST adapter for NIFC ArcGIS REST Services API — Layer. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/{service}/featureserver/{layerid}
+      name: service-featureserver-layerid
+      description: REST surface for service-FeatureServer-layerId.
+      operations:
+      - method: GET
+        name: getlayer
+        description: Get layer metadata
+        call: national-interagency-fire-center-layer.getlayer
+        with:
+          service: rest.service
+          layerId: rest.layerId
+          f: rest.f
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/{service}/featureserver/{layerid}/query
+      name: service-featureserver-layerid-query
+      description: REST surface for service-FeatureServer-layerId-query.
+      operations:
+      - method: GET
+        name: querylayer
+        description: Query a layer
+        call: national-interagency-fire-center-layer.querylayer
+        with:
+          service: rest.service
+          layerId: rest.layerId
+          where: rest.where
+          objectIds: rest.objectIds
+          geometry: rest.geometry
+          geometryType: rest.geometryType
+          inSR: rest.inSR
+          spatialRel: rest.spatialRel
+          outFields: rest.outFields
+          outSR: rest.outSR
+          returnGeometry: rest.returnGeometry
+          returnIdsOnly: rest.returnIdsOnly
+          returnCountOnly: rest.returnCountOnly
+          orderByFields: rest.orderByFields
+          groupByFieldsForStatistics: rest.groupByFieldsForStatistics
+          outStatistics: rest.outStatistics
+          resultOffset: rest.resultOffset
+          resultRecordCount: rest.resultRecordCount
+          f: rest.f
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: national-interagency-fire-center-layer-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for NIFC ArcGIS REST Services API — Layer. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-layer-metadata
+      description: Get layer metadata
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-interagency-fire-center-layer.getlayer
+      with:
+        service: tools.service
+        layerId: tools.layerId
+        f: tools.f
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: query-layer
+      description: Query a layer
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-interagency-fire-center-layer.querylayer
+      with:
+        service: tools.service
+        layerId: tools.layerId
+        where: tools.where
+        objectIds: tools.objectIds
+        geometry: tools.geometry
+        geometryType: tools.geometryType
+        inSR: tools.inSR
+        spatialRel: tools.spatialRel
+        outFields: tools.outFields
+        outSR: tools.outSR
+        returnGeometry: tools.returnGeometry
+        returnIdsOnly: tools.returnIdsOnly
+        returnCountOnly: tools.returnCountOnly
+        orderByFields: tools.orderByFields
+        groupByFieldsForStatistics: tools.groupByFieldsForStatistics
+        outStatistics: tools.outStatistics
+        resultOffset: tools.resultOffset
+        resultRecordCount: tools.resultRecordCount
+        f: tools.f
+      outputParameters:
+      - type: object
+        mapping: $.
