@@ -1,0 +1,217 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NIFC ArcGIS REST Services API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Services",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List ArcGIS services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/",
+            "params": [
+              {
+                "name": "f",
+                "value": "",
+                "type": "query",
+                "description": "Response format."
+              }
+            ]
+          },
+          "docs": "List all FeatureServer services hosted in the NIFC services directory."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "FeatureServer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get FeatureServer metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/:service/FeatureServer",
+            "params": [
+              {
+                "name": "service",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve metadata for a NIFC FeatureServer service."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Layer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get layer metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/:service/FeatureServer/:layerId",
+            "params": [
+              {
+                "name": "service",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "layerId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve metadata for a specific layer in a FeatureServer."
+        },
+        {
+          "info": {
+            "name": "Query a layer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/:service/FeatureServer/:layerId/query",
+            "params": [
+              {
+                "name": "service",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "layerId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "where",
+                "value": "",
+                "type": "query",
+                "description": "SQL-like attribute filter."
+              },
+              {
+                "name": "objectIds",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated ObjectIDs to retrieve."
+              },
+              {
+                "name": "geometry",
+                "value": "",
+                "type": "query",
+                "description": "Geometry filter (point, envelope, polyline, polygon)."
+              },
+              {
+                "name": "geometryType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "inSR",
+                "value": "",
+                "type": "query",
+                "description": "Spatial reference of the input geometry."
+              },
+              {
+                "name": "spatialRel",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outFields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to return, or '*' for all."
+              },
+              {
+                "name": "outSR",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "returnGeometry",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "returnIdsOnly",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "returnCountOnly",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderByFields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupByFieldsForStatistics",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outStatistics",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resultOffset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resultRecordCount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Query features from a NIFC FeatureServer layer using attribute and spatial filters. Supports paging, geometry filtering, output spatial reference, and return options."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
