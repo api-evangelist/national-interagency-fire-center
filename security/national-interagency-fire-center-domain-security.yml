@@ -1,0 +1,41 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.nifc.gov
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  1 13:44:16 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: data-nifc.opendata.arcgis.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 29 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: services3.arcgis.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 13 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+domains:
+- domain: nifc.gov
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: arcgis.com
+  dnssec: true
+  caa:
+  - 0 issuewild "amazonaws.com"
+  - 0 issuewild "amazontrust.com"
+  - 0 issuewild "awstrust.com"
+  - 0 issuewild "digicert.com"
+  - 0 iodef "mailto:vkeymaster@esri.com"
+  - 0 issue "amazon.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

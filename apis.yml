@@ -39,6 +39,10 @@ apis:
       resources. Each FeatureServer supports attribute and spatial queries, paging, statistics, and standard ArcGIS
       output formats including JSON and GeoJSON.
 common:
+  - type: VulnerabilityDisclosure
+    url: security/national-interagency-fire-center-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/national-interagency-fire-center-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/national-interagency-fire-center
   - type: Website
