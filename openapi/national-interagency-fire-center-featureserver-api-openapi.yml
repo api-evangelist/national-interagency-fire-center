@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: NIFC ArcGIS REST Services FeatureServer API
+  description: The National Interagency Fire Center hosts an ArcGIS REST Services Directory exposing FeatureServer services that provide authoritative geospatial data on wildfire incidents, fire perimeters, dispatch boundaries, fuel treatments, weather stations, and related fire management resources. This specification documents the common ArcGIS REST conventions used by NIFC's hosted services.
+  version: 1.0.0
+  contact:
+    name: National Interagency Fire Center
+    url: https://data-nifc.opendata.arcgis.com
+servers:
+- url: https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services
+  description: NIFC ArcGIS REST services
+tags:
+- name: FeatureServer
+paths:
+  /{service}/FeatureServer:
+    get:
+      tags:
+      - FeatureServer
+      summary: Get FeatureServer metadata
+      description: Retrieve metadata for a NIFC FeatureServer service.
+      operationId: getFeatureServer
+      parameters:
+      - name: service
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: f
+        in: query
+        schema:
+          type: string
+          enum:
+          - html
+          - json
+          - pjson
+          default: json
+      responses:
+        '200':
+          description: FeatureServer metadata describing layers and capabilities.
