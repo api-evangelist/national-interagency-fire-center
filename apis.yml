@@ -6,7 +6,19 @@ description: >-
   coordinating resources, personnel, and information to effectively respond to and manage wildfires. NIFC publishes
   authoritative geospatial data through ArcGIS REST services and its open data portal.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/national-interagency-fire-center.png
 url: https://raw.githubusercontent.com/api-evangelist/national-interagency-fire-center/refs/heads/main/apis.yml
 created: '2024-12-03'
 modified: '2026-05-19'
@@ -17,27 +29,49 @@ tags:
   - Geospatial
   - Wildfire
 apis:
-  - aid: national-interagency-fire-center:nifc-arcgis-api
-    name: NIFC ArcGIS REST Services API
-    tags:
-      - ArcGIS
-      - Geospatial
-      - Wildfire
-    humanURL: https://data-nifc.opendata.arcgis.com
-    baseURL: https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services
-    properties:
-      - url: https://data-nifc.opendata.arcgis.com
-        type: Documentation
-      - url: https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services
-        type: Documentation
-      - url: >-
-          https://raw.githubusercontent.com/api-evangelist/national-interagency-fire-center/main/openapi/national-interagency-fire-center-openapi.yml
-        type: OpenAPI
-    description: >-
-      The NIFC ArcGIS REST services expose FeatureServer endpoints with authoritative geospatial data on wildfire
-      incidents, fire perimeters, dispatch boundaries, fuel treatments, weather stations, and other fire management
-      resources. Each FeatureServer supports attribute and spatial queries, paging, statistics, and standard ArcGIS
-      output formats including JSON and GeoJSON.
+- aid: national-interagency-fire-center:national-interagency-fire-center-featureserver-api
+  name: National Interagency Fire Center FeatureServer API
+  description: >-
+    The FeatureServer API from National Interagency Fire Center — 1 operation(s) for featureserver.
+  humanURL: https://data-nifc.opendata.arcgis.com
+  baseURL: https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services
+  tags:
+  - FeatureServer
+  properties:
+  - type: OpenAPI
+    url: openapi/national-interagency-fire-center-featureserver-api-openapi.yml
+  - type: Documentation
+    url: https://data-nifc.opendata.arcgis.com
+  - type: Documentation
+    url: https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services
+- aid: national-interagency-fire-center:national-interagency-fire-center-layer-api
+  name: National Interagency Fire Center Layer API
+  description: The Layer API from National Interagency Fire Center — 2 operation(s) for layer.
+  humanURL: https://data-nifc.opendata.arcgis.com
+  baseURL: https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services
+  tags:
+  - Layer
+  properties:
+  - type: OpenAPI
+    url: openapi/national-interagency-fire-center-layer-api-openapi.yml
+  - type: Documentation
+    url: https://data-nifc.opendata.arcgis.com
+  - type: Documentation
+    url: https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services
+- aid: national-interagency-fire-center:national-interagency-fire-center-services-api
+  name: National Interagency Fire Center Services API
+  description: The Services API from National Interagency Fire Center — 1 operation(s) for services.
+  humanURL: https://data-nifc.opendata.arcgis.com
+  baseURL: https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services
+  tags:
+  - Services
+  properties:
+  - type: OpenAPI
+    url: openapi/national-interagency-fire-center-services-api-openapi.yml
+  - type: Documentation
+    url: https://data-nifc.opendata.arcgis.com
+  - type: Documentation
+    url: https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services
 common:
   - type: AgenticAccess
     url: agentic-access/national-interagency-fire-center-agentic-access.yml
