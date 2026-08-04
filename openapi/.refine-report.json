@@ -1,0 +1,18 @@
+{
+  "provider": "national-interagency-fire-center",
+  "sources": [
+    "national-interagency-fire-center-featureserver-api-openapi.yml",
+    "national-interagency-fire-center-layer-api-openapi.yml",
+    "national-interagency-fire-center-services-api-openapi.yml"
+  ],
+  "outputs": [
+    "national-interagency-fire-center-featureserver-api-openapi.yml",
+    "national-interagency-fire-center-layer-api-openapi.yml",
+    "national-interagency-fire-center-services-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
