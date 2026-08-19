@@ -1,0 +1,389 @@
+{
+  "item": [
+    {
+      "id": "c4e139c7-3582-40af-99eb-d3a2af6d4d26",
+      "name": "Layer",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6415914d-33d8-4d6d-ac8f-fa24eb685faf",
+          "name": "Get layer metadata",
+          "request": {
+            "name": "Get layer metadata",
+            "description": {
+              "content": "Retrieve metadata for a specific layer in a FeatureServer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":service",
+                "FeatureServer",
+                ":layerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "service",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "layerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2a9b3ae8-245c-4e7f-b849-1f6119eafdf2",
+              "name": "Layer metadata including fields, geometry type, and extent.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":service",
+                    "FeatureServer",
+                    ":layerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "f",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "service",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "layerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6a49d3db-e8fb-4b1d-add6-cc6b930527b4",
+          "name": "Query a layer",
+          "request": {
+            "name": "Query a layer",
+            "description": {
+              "content": "Query features from a NIFC FeatureServer layer using attribute and spatial filters. Supports paging, geometry filtering, output spatial reference, and return options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":service",
+                "FeatureServer",
+                ":layerId",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "where",
+                  "value": "<string>",
+                  "description": "SQL-like attribute filter."
+                },
+                {
+                  "disabled": false,
+                  "key": "objectIds",
+                  "value": "<string>",
+                  "description": "Comma-separated ObjectIDs to retrieve."
+                },
+                {
+                  "disabled": false,
+                  "key": "geometry",
+                  "value": "<string>",
+                  "description": "Geometry filter (point, envelope, polyline, polygon)."
+                },
+                {
+                  "disabled": false,
+                  "key": "geometryType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "inSR",
+                  "value": "<string>",
+                  "description": "Spatial reference of the input geometry."
+                },
+                {
+                  "disabled": false,
+                  "key": "spatialRel",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "outFields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to return, or '*' for all."
+                },
+                {
+                  "disabled": false,
+                  "key": "outSR",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "returnGeometry",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "returnIdsOnly",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "returnCountOnly",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderByFields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "groupByFieldsForStatistics",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "outStatistics",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultOffset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultRecordCount",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "service",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "layerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a13a9b45-fe0a-41e7-9459-cfa8229100de",
+              "name": "Query result with features and geometry payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":service",
+                    "FeatureServer",
+                    ":layerId",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "objectIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "geometry",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "geometryType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "inSR",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "spatialRel",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "outFields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "outSR",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "returnGeometry",
+                      "value": "true"
+                    },
+                    {
+                      "key": "returnIdsOnly",
+                      "value": "false"
+                    },
+                    {
+                      "key": "returnCountOnly",
+                      "value": "false"
+                    },
+                    {
+                      "key": "orderByFields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "groupByFieldsForStatistics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "outStatistics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resultOffset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "resultRecordCount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "f",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "service",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "layerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3d4a23f3-2828-4017-9520-994de3b9297b",
+    "name": "NIFC ArcGIS REST Services FeatureServer Layer API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The National Interagency Fire Center hosts an ArcGIS REST Services Directory exposing FeatureServer services that provide authoritative geospatial data on wildfire incidents, fire perimeters, dispatch boundaries, fuel treatments, weather stations, and related fire management resources. This specification documents the common ArcGIS REST conventions used by NIFC's hosted services.\n\nContact Support:\n Name: National Interagency Fire Center",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "item": [
+    {
+      "id": "1bd8de6a-d715-4532-846e-cd7d5e35855e",
+      "name": "FeatureServer",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "27e17531-2eb9-418d-b61d-db1c6583eff1",
+          "name": "Get FeatureServer metadata",
+          "request": {
+            "name": "Get FeatureServer metadata",
+            "description": {
+              "content": "Retrieve metadata for a NIFC FeatureServer service.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":service",
+                "FeatureServer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "service",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8a65e64f-6ce2-4dc6-9d56-a58f2340cc70",
+              "name": "FeatureServer metadata describing layers and capabilities.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":service",
+                    "FeatureServer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "f",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "service",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bce579a0-a85d-4286-8837-ceb0300bb2dd",
+    "name": "NIFC ArcGIS REST Services FeatureServer API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The National Interagency Fire Center hosts an ArcGIS REST Services Directory exposing FeatureServer services that provide authoritative geospatial data on wildfire incidents, fire perimeters, dispatch boundaries, fuel treatments, weather stations, and related fire management resources. This specification documents the common ArcGIS REST conventions used by NIFC's hosted services.\n\nContact Support:\n Name: National Interagency Fire Center",
+      "type": "text/plain"
+    }
+  }
+}

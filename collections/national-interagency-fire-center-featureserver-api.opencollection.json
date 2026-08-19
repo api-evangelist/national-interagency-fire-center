@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NIFC ArcGIS REST Services FeatureServer API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "FeatureServer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get FeatureServer metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/:service/FeatureServer",
+            "params": [
+              {
+                "name": "service",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve metadata for a NIFC FeatureServer service."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

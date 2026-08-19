@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "f035bded-804b-48dd-b795-df2af7699d07",
+      "name": "Services",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "350b6ba3-efa2-409d-ab0f-7da1974b0688",
+          "name": "List ArcGIS services",
+          "request": {
+            "name": "List ArcGIS services",
+            "description": {
+              "content": "List all FeatureServer services hosted in the NIFC services directory.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "json",
+                  "description": "Response format."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fd6e6a9c-c963-42f5-9e87-561a62fed667",
+              "name": "Directory listing of services.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "f",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "470cd366-3903-4262-8b96-7ec1fbb3dd9d",
+    "name": "NIFC ArcGIS REST FeatureServer Services API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The National Interagency Fire Center hosts an ArcGIS REST Services Directory exposing FeatureServer services that provide authoritative geospatial data on wildfire incidents, fire perimeters, dispatch boundaries, fuel treatments, weather stations, and related fire management resources. This specification documents the common ArcGIS REST conventions used by NIFC's hosted services.\n\nContact Support:\n Name: National Interagency Fire Center",
+      "type": "text/plain"
+    }
+  }
+}
