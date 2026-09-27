@@ -36,7 +36,7 @@ modified: '2026-05-19'
 specificationVersion: '0.23'
 tags:
   - Emergency Management
-  - Federal-Government
+  - Federal Government
   - Geospatial
   - Wildfire
 tags_raw:
@@ -44,6 +44,7 @@ tags_raw:
   - Federal Government
   - Geospatial
   - Wildfire
+  - Federal-Government
 apis:
 - aid: national-interagency-fire-center:national-interagency-fire-center-featureserver-api
   name: National Interagency Fire Center FeatureServer API
