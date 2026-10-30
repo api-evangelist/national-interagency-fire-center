@@ -1,4 +1,4 @@
-# National Interagency Fire Center (national-interagency-fire-center)
+# National Interagency Fire Center
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,54 +66,117 @@
 
 The National Interagency Fire Center (NIFC) is a collaborative effort between multiple federal agencies to address wildfires and other emergency incidents around the United States. NIFC serves as a centralized command center for coordinating resources, personnel, and information to effectively respond to and manage wildfires. NIFC publishes authoritative geospatial data through ArcGIS REST services and its open data portal.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/national-interagency-fire-center/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/national-interagency-fire-center/refs/heads/main/apis.yml)
+**Areas:** Emergency Management · Federal Government · Geospatial · Wildfire
 
-## Scope
+## National Interagency Fire Center on APIs.io
 
-- **Type:** Index
+Everything profiled for National Interagency Fire Center is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/national-interagency-fire-center/](https://apis.io/providers/national-interagency-fire-center/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Emergency Management
-- Federal Government
-- Geospatial
-- Wildfire
+- [National Interagency Fire Center FeatureServer API](https://apis.io/apis/national-interagency-fire-center/national-interagency-fire-center-featureserver-api/) — The FeatureServer API from National Interagency Fire Center — 1 operation(s) for featureserver.
+- [National Interagency Fire Center Layer API](https://apis.io/apis/national-interagency-fire-center/national-interagency-fire-center-layer-api/) — The Layer API from National Interagency Fire Center — 2 operation(s) for layer.
+- [National Interagency Fire Center Services API](https://apis.io/apis/national-interagency-fire-center/national-interagency-fire-center-services-api/) — The Services API from National Interagency Fire Center — 1 operation(s) for services.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-12-03
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### NIFC ArcGIS REST Services API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The NIFC ArcGIS REST services expose FeatureServer endpoints with authoritative geospatial data on wildfire incidents, fire perimeters, dispatch boundaries, fuel treatments, weather stations, and other fire management resources. Each FeatureServer supports attribute and spatial queries, paging, statistics, and standard ArcGIS output formats including JSON and GeoJSON.
+- [National Interagency Fire Center Agentic Access](https://apis.io/agentic-access/national-interagency-fire-center/national-interagency-fire-center-agentic-access/)
 
-- **Human URL:** [https://data-nifc.opendata.arcgis.com](https://data-nifc.opendata.arcgis.com)
-- **Base URL:** `https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services`
+#### Collections (4)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- ArcGIS
-- Geospatial
-- Wildfire
+- [NIFC ArcGIS REST Services API](https://apis.io/collections/national-interagency-fire-center/open-national-interagency-fire-center/)
+- [NIFC ArcGIS REST Services FeatureServer API](https://apis.io/collections/national-interagency-fire-center/open-national-interagency-fire-center-featureserver-api/)
+- [NIFC ArcGIS REST Services FeatureServer Layer API](https://apis.io/collections/national-interagency-fire-center/open-national-interagency-fire-center-layer-api/)
+- [NIFC ArcGIS REST FeatureServer Services API](https://apis.io/collections/national-interagency-fire-center/open-national-interagency-fire-center-services-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://data-nifc.opendata.arcgis.com)
-- [Documentation](https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/national-interagency-fire-center/main/openapi/national-interagency-fire-center-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/national-interagency-fire-center.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/national-interagency-fire-center.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [National Interagency Fire Center Domain Security](https://apis.io/security/national-interagency-fire-center/national-interagency-fire-center-domain-security/)
+- [National Interagency Fire Center Vulnerability Disclosure](https://apis.io/security/national-interagency-fire-center/national-interagency-fire-center-vulnerability-disclosure/)
 
-- [LinkedIn](https://www.linkedin.com/company/national-interagency-fire-center)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [National Interagency Fire Center Plans Pricing](https://apis.io/plans/national-interagency-fire-center/national-interagency-fire-center-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [National Interagency Fire Center Rate Limits](https://apis.io/rate-limits/national-interagency-fire-center/national-interagency-fire-center-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [National Interagency Fire Center Finops](https://apis.io/finops/national-interagency-fire-center/national-interagency-fire-center-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.nifc.gov/)
-- [Portal](https://data-nifc.opendata.arcgis.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 22.8** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 43.5 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 7.9 |
+
+**Agent readiness 17.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/national-interagency-fire-center/](https://apis.io/providers/national-interagency-fire-center/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for National Interagency Fire Center: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/national-interagency-fire-center/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
